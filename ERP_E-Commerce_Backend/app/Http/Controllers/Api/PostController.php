@@ -24,7 +24,7 @@ class PostController extends Controller
     }
   }
 
-  public function ReadAllPost(Request $request)
+  public function ReadAllPost()
   {
     try {
       return response()->json([

@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 
 class CategoryPostController extends Controller
 {
+    
     public function ReadCategory(Category $categoryPost)
     {
 
@@ -66,8 +67,6 @@ class CategoryPostController extends Controller
     {
 
         try {
-
-            $categoryPost = new Category();
 
             $categoryPost->Name = $request->Name;
             $categoryPost->Description = $request->Description;

@@ -19,4 +19,8 @@ class Post extends Model
         return $this->hasOne('App\Models\User', 'id', 'user_id');
     }
 
+    public function PostOrder(){
+        return $this->hasOne('App\Models\Order', 'id', '_id');
+    }
+
 }

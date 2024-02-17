@@ -48,4 +48,9 @@ class User extends Authenticatable
     public function UserPost(){
         return $this->hasMany('App\Models\Post');
     }
+
+    public function UserOrder(){
+        return $this->hasMany('App\Models\Order');
+    }
+
 }
