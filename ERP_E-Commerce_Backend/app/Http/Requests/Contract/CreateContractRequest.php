@@ -24,7 +24,7 @@ class CreateContractRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'Name' => 'requred',
+            'Name' => 'required',
             'Description' => 'required',
             'Salary' => 'required',
         ];
@@ -40,13 +40,14 @@ class CreateContractRequest extends FormRequest
         ]));
     }
 
+
     public function messages()
     {
-        return[
+        return [
             'Name.required' => 'Un nom doit etre fourni',
             'Description.required' => 'une description doit etre fournie',
             'Salary.required' => 'le salaire  doit etre fournie',
-             
+
         ];
     }
 }

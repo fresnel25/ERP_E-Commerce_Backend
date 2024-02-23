@@ -24,7 +24,7 @@ class CreateLeaveRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'Name' => 'requred',
+            'Name' => 'required',
             'Reason' => 'required',
             'Start_date' => 'required',
             'End_date' => 'required'

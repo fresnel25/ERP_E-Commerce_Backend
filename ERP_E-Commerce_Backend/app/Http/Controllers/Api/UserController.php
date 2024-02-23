@@ -67,6 +67,9 @@ class UserController extends Controller
     public function getPostsByUserId( $user)
     {
         try {
+            $userExist = User::where('id', $user)->exists();
+
+           if($userExist){
             $posts = Post::where('user_id', $user)->get();
 
             return response()->json([
@@ -77,6 +80,13 @@ class UserController extends Controller
                     'post'=>$posts
                 ],
             ]);
+           }
+           else{
+            return response()->json([
+                'status_code' => 200,
+                'message' => 'This user id not exists',
+            ]);
+           }
         } catch (Exception $e) {
             return response()->json($e);
         }
@@ -85,6 +95,9 @@ class UserController extends Controller
     public function getLeavesByUserId( $user)
     {
         try {
+            $userExist = User::where('id', $user)->exists();
+
+            if($userExist){
             $leave = Leave::where('user_id', $user)->get();
 
             return response()->json([
@@ -95,6 +108,13 @@ class UserController extends Controller
                     'leave'=>$leave
                 ],
             ]);
+        }
+        else{
+            return response()->json([
+                'status_code' => 200,
+                'message' => 'This user id not exists',
+            ]);
+           }
         } catch (Exception $e) {
             return response()->json($e);
         }
@@ -103,6 +123,11 @@ class UserController extends Controller
     public function getContractsByUserId( $user)
     {
         try {
+
+            $userExist = User::where('id', $user)->exists();
+
+            if($userExist){
+
             $userContract = UserContract::where('user_id', $user)->get();
 
             return response()->json([
@@ -113,6 +138,13 @@ class UserController extends Controller
                     'contract'=>$userContract
                 ],
             ]);
+        }
+        else{
+            return response()->json([
+                'status_code' => 200,
+                'message' => 'This user id not exists',
+            ]);
+           }
         } catch (Exception $e) {
             return response()->json($e);
         }
@@ -121,6 +153,11 @@ class UserController extends Controller
     public function getPaymentsByUserId( $user)
     { 
         try {
+
+            $userExist = User::where('id', $user)->exists();
+
+            if($userExist){
+
             $userPayment = UserMonthlyPayment::where('user_id', $user)->get();
 
             return response()->json([
@@ -131,6 +168,13 @@ class UserController extends Controller
                     'payment'=>$userPayment
                 ],
             ]);
+        }
+        else{
+            return response()->json([
+                'status_code' => 200,
+                'message' => 'This user id not exists',
+            ]);
+           }
         } catch (Exception $e) {
             return response()->json($e);
         }

@@ -20,6 +20,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+    // Read All Articles
+    Route::get('/readAll/post', [PostController::class, 'ReadAllPost']);
 
 // Connecter un User
 Route::post('/Login', [UserController::class, 'LoginUser']);
@@ -27,8 +29,6 @@ Route::post('/Login', [UserController::class, 'LoginUser']);
 Route::middleware('auth:sanctum')->group(function () {
 
                     // ******* Section Article *******
-    // Read All Articles
-    Route::get('/readAll/post', [PostController::class, 'ReadAllPost']);
     // Read un Article
     Route::get('/read/post/{post}', [PostController::class, 'ReadPost']);
     // Create un Article

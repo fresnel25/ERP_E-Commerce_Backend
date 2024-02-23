@@ -53,4 +53,8 @@ class User extends Authenticatable
         return $this->hasMany('App\Models\Order');
     }
 
+    public function UserAttendance(){
+        return $this->hasMany('App\Models\Attendance');
+    }
+
 }

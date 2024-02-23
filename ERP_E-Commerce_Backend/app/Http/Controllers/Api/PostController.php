@@ -30,7 +30,7 @@ class PostController extends Controller
       return response()->json([
         'status_code' => 200,
         'status_message' => 'All post',
-        'data' => Post::all()
+        'AllPosts' => Post::all()
       ]);
     } catch (Exception $e) {
       return response()->json($e);

@@ -24,7 +24,7 @@ class UpdateContractRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'Name' => 'requred',
+            'Name' => 'required',
             'Description' => 'required',
             'Salary' => 'required',
         ];
