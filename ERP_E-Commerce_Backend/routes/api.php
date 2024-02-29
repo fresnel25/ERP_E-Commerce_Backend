@@ -22,6 +22,8 @@ use Illuminate\Support\Facades\Route;
 
     // Read All Articles
     Route::get('/readAll/post', [PostController::class, 'ReadAllPost']);
+     // Create User
+     Route::post('/Register', [UserController::class, 'RegisterUser']);
 
 // Connecter un User
 Route::post('/Login', [UserController::class, 'LoginUser']);
@@ -89,8 +91,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::delete('/delete/payment/{payment}', [UserMonthlyPaymentController::class, 'DeleteContract']);
 
                     // ******* Section Utilisateur *******
-    // Create User
-    Route::post('/Register', [UserController::class, 'RegisterUser']);
+   
     // Read user with all posts created
     Route::get('/read/userAllPostCreate/{user}', [UserController::class, 'getPostsByUserId']);
     // Read user with all leaves created

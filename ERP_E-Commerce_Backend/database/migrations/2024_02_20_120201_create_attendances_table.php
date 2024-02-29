@@ -15,10 +15,12 @@ return new class extends Migration
             $table->id();
             $table->string('Name');
             $table->boolean('Status');
+            $table->date('Date');
+            $table->string('Time_start');
+            $table->string('Time_end');
             $table->foreignId('user_id')
                 ->constrained('users')
                 ->onDelete('set null');
-
             $table->foreignId('create_id')
                 ->constrained('users')
                 ->onDelete('set null');

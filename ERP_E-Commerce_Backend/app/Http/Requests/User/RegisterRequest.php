@@ -27,6 +27,7 @@ class RegisterRequest extends FormRequest
             'name' => 'required',
             'email' => 'required|email|unique:users,email',
             'password' => 'required',
+            // 'image' => 'nullable|image|',
         ];
     }
 
@@ -48,6 +49,7 @@ class RegisterRequest extends FormRequest
             'email.unique' => 'Cette adresse existe deja',
             'email.email' => 'Cette adresse ne respecte pas le format d\'un email',
             'password.required' => 'un password doit etre fournie',
+            // 'image.image' => 'cette image ne respecte pas les formats jpeg, png, jpg, gif'
         ];
     }
 }
